@@ -14,9 +14,5 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/carbon_land.mk
+    $(LOCAL_DIR)/lineage_land.mk
 
-COMMON_LUNCH_CHOICES := \
-    carbon_land-user \
-    carbon_land-userdebug \
-    carbon_land-eng
