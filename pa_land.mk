@@ -15,23 +15,29 @@
 # limitations under the License.
 #
 
+# Check for target product
+ifeq (pa_land,$(TARGET_PRODUCT))
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
-# Inherit some common CarbonROM stuff
-$(call inherit-product, vendor/carbon/config/gsm.mk)
-$(call inherit-product, vendor/carbon/config/common.mk)
+include vendor/pa/config/common_full_phone.mk
+include device/qcom/common/common.mk
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
 
 # Inherit from land device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := land
-PRODUCT_MODEL := Redmi 3s
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := carbon_land
+PRODUCT_MODEL := Redmi 3s
+PRODUCT_NAME := pa_land
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
@@ -42,3 +48,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := Xiaomi/land/land:6.0.1/MMB29M/V10.2.2.0.MALMIXM:user/release-keys
 
+endif
