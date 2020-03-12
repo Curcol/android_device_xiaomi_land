@@ -263,6 +263,11 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Perf
+-include vendor/qcom/common/av/qti-av.mk
+-include vendor/qcom/common/bt/qti-bt.mk
+-include vendor/qcom/common/perf/qti-perf.mk
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
