@@ -329,9 +329,6 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     libqdMetaData.system
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.0 \
     android.hardware.secure_element@1.0
